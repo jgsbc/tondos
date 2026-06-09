@@ -27,7 +27,6 @@ export const ExerciseDetail: React.FC<ExerciseDetailProps> = ({
 
   return (
     <div className="detail-view">
-      {/* Top back button */}
       <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
         <button 
           className="btn btn-secondary" 
@@ -39,7 +38,6 @@ export const ExerciseDetail: React.FC<ExerciseDetailProps> = ({
         <h1 style={{ fontSize: '24px' }}>{exercise.title}</h1>
       </div>
 
-      {/* Large Image container */}
       <div className="detail-img-container">
         <img 
           src={exercise.image} 
@@ -48,7 +46,6 @@ export const ExerciseDetail: React.FC<ExerciseDetailProps> = ({
         />
       </div>
 
-      {/* Tags Row */}
       <div className="tags-row">
         <span className={`tag tag-difficulty-${exercise.difficulty}`}>
           Difficulté : {exercise.difficulty}
@@ -59,9 +56,11 @@ export const ExerciseDetail: React.FC<ExerciseDetailProps> = ({
         <span className="tag tag-duration">
           ⏱️ Conseillé : {exercise.duration}
         </span>
+        <span className="tag tag-area">
+          Matériel : {exercise.equipment}
+        </span>
       </div>
 
-      {/* Objective */}
       <div className="detail-info">
         <h3 className="block-title">Objectif de l'exercice</h3>
         <p style={{ fontSize: '17px', color: '#1f2937', fontWeight: 500 }}>
@@ -69,8 +68,6 @@ export const ExerciseDetail: React.FC<ExerciseDetailProps> = ({
         </p>
       </div>
 
-
-      {/* Precautions Box */}
       <div className="precautions-card">
         <h4>
           <svg style={{ width: '20px', height: '20px', flexShrink: 0 }} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
@@ -85,7 +82,6 @@ export const ExerciseDetail: React.FC<ExerciseDetailProps> = ({
         </ul>
       </div>
 
-      {/* Bottom Action buttons */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginTop: '16px' }}>
         <button 
           className="btn btn-success" 
