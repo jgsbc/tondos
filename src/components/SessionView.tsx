@@ -7,7 +7,6 @@ interface SessionViewProps {
 }
 
 export const SessionView: React.FC<SessionViewProps> = ({ initialExerciseId, onClose }) => {
-  // Determine starting index
   const startIndex = initialExerciseId 
     ? exercises.findIndex((e) => e.id === initialExerciseId) 
     : 0;
@@ -21,7 +20,6 @@ export const SessionView: React.FC<SessionViewProps> = ({ initialExerciseId, onC
   const handleNext = () => {
     if (currentIndex < totalExercises - 1) {
       setCurrentIndex((prev) => prev + 1);
-      // Scroll to top of the screen when moving to the next exercise
       window.scrollTo(0, 0);
     } else {
       setIsFinished(true);
@@ -36,7 +34,6 @@ export const SessionView: React.FC<SessionViewProps> = ({ initialExerciseId, onC
     }
   };
 
-  // Celebration / Finish screen
   if (isFinished) {
     return (
       <div className="session-finished">
@@ -58,8 +55,6 @@ export const SessionView: React.FC<SessionViewProps> = ({ initialExerciseId, onC
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-      
-      {/* Session Header with progression */}
       <div>
         <div className="session-header-row">
           <button 
@@ -81,13 +76,11 @@ export const SessionView: React.FC<SessionViewProps> = ({ initialExerciseId, onC
         </div>
       </div>
 
-      {/* Exercise Title */}
       <h2 style={{ fontSize: '26px', textAlign: 'center', margin: '4px 0', color: '#1f2937' }}>
         {currentExercise.title}
       </h2>
 
-      {/* Large Image container */}
-      <div className="detail-img-container">
+      <div className="detail-img-container session-img-container">
         <img 
           src={currentExercise.image} 
           alt={`Démonstration animée de l'exercice ${currentExercise.title}`} 
@@ -95,15 +88,15 @@ export const SessionView: React.FC<SessionViewProps> = ({ initialExerciseId, onC
         />
       </div>
 
-      {/* Goal */}
       <div style={{ textAlign: 'center', padding: '0 8px' }}>
+        <p style={{ fontSize: '17px', fontWeight: 700, color: '#1f2937' }}>
+          Matériel : {currentExercise.equipment}
+        </p>
         <p style={{ fontSize: '17px', fontWeight: 600, color: '#4b5563' }}>
           🎯 Objectif : {currentExercise.goal}
         </p>
       </div>
 
-
-      {/* Precautions warning */}
       <div className="precautions-card" style={{ padding: '12px' }}>
         <h4 style={{ fontSize: '16px', margin: 0, display: 'flex', alignItems: 'center', gap: '8px', color: '#dd6b20' }}>
           <svg style={{ width: '18px', height: '18px', flexShrink: 0 }} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
@@ -118,7 +111,6 @@ export const SessionView: React.FC<SessionViewProps> = ({ initialExerciseId, onC
         </ul>
       </div>
 
-      {/* Bottom control row */}
       <div style={{ display: 'flex', gap: '12px', marginTop: '16px', position: 'sticky', bottom: '10px', zIndex: 5 }}>
         {currentIndex > 0 ? (
           <button 
@@ -146,7 +138,6 @@ export const SessionView: React.FC<SessionViewProps> = ({ initialExerciseId, onC
           {currentIndex === totalExercises - 1 ? "Terminer la séance 🎉" : "Suivant →"}
         </button>
       </div>
-
     </div>
   );
 };
