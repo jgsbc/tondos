@@ -1,4 +1,4 @@
-export interface Exercise {
+﻿export interface Exercise {
   id: string;
   title: string;
   shortDescription: string;
@@ -7,152 +7,141 @@ export interface Exercise {
   duration: string;
   difficulty: "doux" | "moyen";
   bodyArea: string;
-  equipment: "Élastique" | "Aucun";
   precautions: string[];
 }
-
-const asset = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
 
 export const exercises: Exercise[] = [
   {
     id: "dos-superieur",
-    title: "Dos supérieur",
-    shortDescription: "Renforce le haut du dos et améliore la posture.",
-    goal: "Étirement et renforcement doux des muscles situés entre les omoplates pour redresser le buste.",
-    image: asset("exercises/dos-superieur.webp"),
+    title: "Le Gorille Poli",
+    shortDescription: "On réveille le haut du dos sans déclencher de réunion de crise entre les omoplates.",
+    goal: "Redonner un peu de panache au buste et rappeler au dos qu'il n'est pas obligé de vivre plié comme une facture oubliée.",
+    image: "/exercises/dos-superieur.webp",
     duration: "2 minutes",
     difficulty: "doux",
     bodyArea: "Haut du dos",
-    equipment: "Élastique",
     precautions: [
-      "Ne forcez pas sur le cou.",
-      "Gardez les épaules basses et détendues.",
-      "Arrêtez immédiatement si vous ressentez un pincement dans la colonne."
+      "Le cou reste calme. Il n'a rien demandé.",
+      "Les épaules restent basses, pas en mode tortue stressée.",
+      "Si ça pince, on cesse immédiatement les négociations avec l'élastique."
     ]
   },
   {
     id: "epaules",
-    title: "Rotation des épaules",
-    shortDescription: "Assouplit l'articulation des épaules et libère les tensions.",
-    goal: "Améliorer la mobilité des épaules et soulager les raideurs accumulées.",
-    image: asset("exercises/epaules.webp"),
+    title: "Les Hélices du Daron",
+    shortDescription: "Rotation douce des épaules, comme un hélicoptère qui prend son temps avant le décollage.",
+    goal: "Libérer les épaules de leurs tensions accumulées depuis la dernière fois qu'on a porté quelque chose de trop lourd avec trop de fierté.",
+    image: "/exercises/epaules.webp",
     duration: "1 minute 30",
     difficulty: "doux",
     bodyArea: "Épaules",
-    equipment: "Élastique",
     precautions: [
-      "Gardez le cou bien long et ne crispez pas les mâchoires.",
-      "Faites des cercles de petite amplitude si vos épaules sont sensibles."
+      "Le cou reste long, détendu, pas crispé comme quelqu'un qui attend les résultats du Loto.",
+      "Si les épaules protestent, on réduit l'amplitude. Elles ont le droit d'avoir un avis."
     ]
   },
   {
     id: "posture",
-    title: "Alignement de la posture",
-    shortDescription: "Prenez conscience de votre alignement corporel.",
-    goal: "Favoriser un bon alignement de la tête, des épaules et du bassin pour prévenir le mal de dos.",
-    image: asset("exercises/posture.webp"),
+    title: "Le Flamant Presque Stable",
+    shortDescription: "On se tient droit, avec dignité, même si le canapé appelle au loin.",
+    goal: "Retrouver un alignement corporel qui inspire le respect — celui d'un homme debout, stable, et qui ne compte pas se voûter avant 2040.",
+    image: "/exercises/posture.webp",
     duration: "2 minutes",
     difficulty: "doux",
     bodyArea: "Corps entier",
-    equipment: "Élastique",
     precautions: [
-      "Ne cambrez pas excessivement le bas du dos.",
-      "Ne bloquez jamais votre respiration."
+      "On ne cambre pas le bas du dos façon arc de triomphe. On est droit, pas arqué.",
+      "La respiration continue. Elle aussi participe à la mission."
     ]
   },
   {
     id: "posture-torse",
-    title: "Ouverture du buste",
-    shortDescription: "Étire la cage thoracique et aide à mieux respirer.",
-    goal: "Ouvrir la zone du cœur et étirer les pectoraux pour contrer la posture voûtée.",
-    image: asset("exercises/posture-torse.webp"),
+    title: "Le Torse Présidentiel",
+    shortDescription: "On ouvre la cage thoracique comme quelqu'un qui s'apprête à prononcer un discours important.",
+    goal: "Étirer les pectoraux, ouvrir le buste, et respirer comme un homme qui a des choses à dire et la capacité pulmonaire pour les dire.",
+    image: "/exercises/posture-torse.webp",
     duration: "2 minutes",
     difficulty: "doux",
     bodyArea: "Torse et Poitrine",
-    equipment: "Élastique",
     precautions: [
-      "Ne poussez pas le ventre en avant, restez bien gainé.",
-      "Vos mouvements doivent être calés sur le rythme naturel de votre respiration.",
-      "Attention à ne pas forcer sur l'écartement des bras."
+      "On ne force pas l'écartement. Ce n'est pas un concours d'envergure.",
+      "Le mouvement suit la respiration. Pas l'inverse.",
+      "Le ventre ne pousse pas en avant. On reste distingué."
     ]
   },
   {
     id: "posture-deadlift",
-    title: "Bascule du bassin",
-    shortDescription: "Renforce les fessiers et le bas du dos en toute sécurité.",
-    goal: "Apprendre à fléchir les hanches en gardant le dos droit pour ramasser un objet au sol.",
-    image: asset("exercises/posture-deadlift.webp"),
+    title: "Le Ramasseur de Télécommande",
+    shortDescription: "La technique officielle pour récupérer un objet au sol sans y laisser ses lombaires.",
+    goal: "Apprendre à se pencher avec classe et sécurité — parce que la télécommande ne mérite pas qu'on se blesse pour elle.",
+    image: "/exercises/posture-deadlift.webp",
     duration: "2 minutes",
     difficulty: "moyen",
     bodyArea: "Bas du dos et Jambes",
-    equipment: "Élastique",
     precautions: [
-      "Ne laissez jamais le dos s'arrondir.",
-      "La flexion doit venir des hanches, pas de la taille.",
-      "Regardez vers le sol devant vous pour ne pas casser la nuque."
+      "Le dos ne s'arrondit pas. On est un ramasseur, pas une crevette.",
+      "La flexion vient des hanches, pas de la taille. Nuance capitale.",
+      "Le regard vers le sol, devant soi. Pas vers le plafond, pas vers Metropolis."
     ]
   },
   {
     id: "posture-epaule-bras",
-    title: "Étirement épaules et bras",
-    shortDescription: "Assouplit les bras et améliore l'amplitude articulaire.",
-    goal: "Étirer les triceps et les muscles de l'épaule pour faciliter les gestes du quotidien.",
-    image: asset("exercises/posture-epaule-bras.webp"),
+    title: "Le Salut du Viking Élastique",
+    shortDescription: "Un étirement noble des bras et des épaules, digne d'un guerrier du quotidien.",
+    goal: "Assouplir les triceps et l'épaule pour que les gestes du quotidien redeviennent fluides, souverains, et légèrement impressionnants.",
+    image: "/exercises/posture-epaule-bras.webp",
     duration: "2 minutes",
     difficulty: "doux",
     bodyArea: "Bras et Épaules",
-    equipment: "Élastique",
     precautions: [
-      "Ne forcez pas si vous sentez une douleur aiguë dans l'épaule.",
-      "Gardez la tête droite sans la pousser vers l'avant.",
-      "Attention à ne pas vous prendre un éventuel élastique dans le nez !"
+      "On ne force pas si l'épaule fait la grève. Elle a peut-être ses raisons.",
+      "La tête reste droite. Pas de coup du lapin auto-infligé.",
+      "Attention à ne pas se prendre un élastique dans le nez. Ça arrive. Ça ne s'oublie pas."
     ]
   },
   {
     id: "posture-epaules",
-    title: "Élévations latérales",
-    shortDescription: "Renforce le dessus des épaules de manière contrôlée.",
-    goal: "Tonifier les deltoïdes pour aider à porter des charges légères et lever les bras.",
-    image: asset("exercises/posture-epaules.webp"),
+    title: "L'Aigle de Salon",
+    shortDescription: "Élévations latérales des bras. Majestueux. Contrôlé. Légèrement ridicule. Très efficace.",
+    goal: "Tonifier les épaules pour qu'elles portent fièrement les prochains sacs de courses, les bébés à câliner, et les espoirs familiaux.",
+    image: "/exercises/posture-epaules.webp",
     duration: "1 minute 30",
     difficulty: "moyen",
     bodyArea: "Épaules",
-    equipment: "Élastique",
     precautions: [
-      "Ne montez pas les bras plus haut que la ligne de vos épaules.",
-      "N'utilisez pas d'élan pour lever les bras, le mouvement doit être fluide.",
-      "Attention à garder les poignets bien alignés."
+      "On ne monte pas au-delà de l'horizontale. On est un aigle de salon, pas un albatros en plein vol.",
+      "Pas d'élan. Le mouvement est musculaire, pas balistique.",
+      "Les poignets restent alignés. Même un aigle soigne ses détails."
     ]
   },
   {
     id: "superman",
-    title: "Le Superman (au sol ou sur chaise)",
-    shortDescription: "Renforce les muscles lombaires et fessiers.",
-    goal: "Renforcer la chaîne postérieure pour un dos solide et une posture droite.",
-    image: asset("exercises/superman.webp"),
+    title: "Superman en RTT",
+    shortDescription: "Un super-héros discret, sans cape, sans slip rouge, mais avec des lombaires concernées.",
+    goal: "Renforcer doucement le bas du dos et les fessiers, pour retrouver une posture de héros domestique — solide, digne, et capable de soulever un carton sans drame.",
+    image: "/exercises/superman.webp",
     duration: "2 minutes",
     difficulty: "moyen",
     bodyArea: "Lombaires et Fessiers",
-    equipment: "Aucun",
     precautions: [
-      "Ne cherchez pas à cambrer excessivement, décollez de quelques centimètres seulement.",
-      "Regardez toujours vers le sol pour préserver les cervicales.",
-      "Serrez les fessiers pour protéger le bas du dos."
+      "Pas besoin de voler : quelques centimètres de décollement suffisent pour le titre.",
+      "Le regard reste vers le sol. Pas vers Metropolis.",
+      "Si le bas du dos proteste, Superman rentre à la maison et reprend demain."
     ]
   },
   {
     id: "torse",
-    title: "Extension thoracique",
-    shortDescription: "Lutte contre la raideur du dos et ouvre les voies respiratoires.",
-    goal: "Améliorer l'extension de la colonne et détendre les muscles pectoraux.",
-    image: asset("exercises/torse.webp"),
+    title: "Le Pectoral Philosophe",
+    shortDescription: "Extension du dos sur dossier de chaise. Une pause digne d'un homme qui prend le temps de respirer et d'y réfléchir.",
+    goal: "Ouvrir la colonne, libérer le souffle, et rappeler que s'étirer en pensant à rien de particulier est une forme de sagesse.",
+    image: "/exercises/torse.webp",
     duration: "2 minutes",
     difficulty: "doux",
     bodyArea: "Torse et Colonne",
-    equipment: "Élastique",
     precautions: [
-      "Ne laissez pas votre tête tomber lourdement vers l'arrière, soutenez-la avec vos mains.",
-      "Arrêtez l'extension dès que vous sentez le dossier faire pression, sans forcer."
+      "La tête est soutenue par les mains. Elle ne tombe pas en arrière toute seule comme au cinéma.",
+      "On s'arrête dès que ça pousse sur le dossier. On n'est pas là pour gagner un concours de souplesse.",
+      "La chaise doit être solide. Ce n'est pas le moment d'expérimenter avec le petit tabouret bancal."
     ]
   }
 ];

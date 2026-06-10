@@ -4,19 +4,23 @@ import { ExerciseList } from './components/ExerciseList';
 import { ExerciseDetail } from './components/ExerciseDetail';
 import { SessionView } from './components/SessionView';
 
+interface BeforeInstallPromptEvent extends Event {
+  prompt: () => Promise<void>;
+  userChoice: Promise<{ outcome: 'accepted' | 'dismissed' }>;
+}
+
 type View = 'home' | 'list' | 'detail' | 'session';
 
 export default function App() {
   const [currentView, setCurrentView] = useState<View>('home');
   const [selectedExerciseId, setSelectedExerciseId] = useState<string | null>(null);
-  const [deferredInstallPrompt, setDeferredInstallPrompt] = useState<any>(null);
+  const [deferredInstallPrompt, setDeferredInstallPrompt] = useState<BeforeInstallPromptEvent | null>(null);
 
   useEffect(() => {
     // Listen for the PWA install prompt event
     const handleBeforeInstallPrompt = (e: Event) => {
       e.preventDefault();
-      // Store the event so it can be triggered later
-      setDeferredInstallPrompt(e);
+      setDeferredInstallPrompt(e as BeforeInstallPromptEvent);
     };
 
     window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
@@ -108,10 +112,8 @@ export default function App() {
       {currentView !== 'session' && (
         <header className="app-header">
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer' }} onClick={() => navigateTo('home')}>
-            <svg style={{ width: '28px', height: '28px', color: '#3b82f6' }} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-            </svg>
-            <span className="header-title">Gym Douce</span>
+            <span style={{ fontSize: '22px' }}>🪖</span>
+            <span className="header-title">Tondos</span>
           </div>
           
           {currentView !== 'home' && (
