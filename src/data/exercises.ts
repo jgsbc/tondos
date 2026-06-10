@@ -1,4 +1,4 @@
-﻿export interface Exercise {
+export interface Exercise {
   id: string;
   title: string;
   shortDescription: string;
@@ -10,13 +10,15 @@
   precautions: string[];
 }
 
+const asset = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
+
 export const exercises: Exercise[] = [
   {
     id: "dos-superieur",
     title: "Le Gorille Poli",
     shortDescription: "On réveille le haut du dos sans déclencher de réunion de crise entre les omoplates.",
     goal: "Redonner un peu de panache au buste et rappeler au dos qu'il n'est pas obligé de vivre plié comme une facture oubliée.",
-    image: "/exercises/dos-superieur.webp",
+    image: asset("exercises/dos-superieur.webp"),
     duration: "2 minutes",
     difficulty: "doux",
     bodyArea: "Haut du dos",
@@ -31,7 +33,7 @@ export const exercises: Exercise[] = [
     title: "Les Hélices du Daron",
     shortDescription: "Rotation douce des épaules, comme un hélicoptère qui prend son temps avant le décollage.",
     goal: "Libérer les épaules de leurs tensions accumulées depuis la dernière fois qu'on a porté quelque chose de trop lourd avec trop de fierté.",
-    image: "/exercises/epaules.webp",
+    image: asset("exercises/epaules.webp"),
     duration: "1 minute 30",
     difficulty: "doux",
     bodyArea: "Épaules",
@@ -45,7 +47,7 @@ export const exercises: Exercise[] = [
     title: "Le Flamant Presque Stable",
     shortDescription: "On se tient droit, avec dignité, même si le canapé appelle au loin.",
     goal: "Retrouver un alignement corporel qui inspire le respect — celui d'un homme debout, stable, et qui ne compte pas se voûter avant 2040.",
-    image: "/exercises/posture.webp",
+    image: asset("exercises/posture.webp"),
     duration: "2 minutes",
     difficulty: "doux",
     bodyArea: "Corps entier",
@@ -59,7 +61,7 @@ export const exercises: Exercise[] = [
     title: "Le Torse Présidentiel",
     shortDescription: "On ouvre la cage thoracique comme quelqu'un qui s'apprête à prononcer un discours important.",
     goal: "Étirer les pectoraux, ouvrir le buste, et respirer comme un homme qui a des choses à dire et la capacité pulmonaire pour les dire.",
-    image: "/exercises/posture-torse.webp",
+    image: asset("exercises/posture-torse.webp"),
     duration: "2 minutes",
     difficulty: "doux",
     bodyArea: "Torse et Poitrine",
@@ -74,7 +76,7 @@ export const exercises: Exercise[] = [
     title: "Le Ramasseur de Télécommande",
     shortDescription: "La technique officielle pour récupérer un objet au sol sans y laisser ses lombaires.",
     goal: "Apprendre à se pencher avec classe et sécurité — parce que la télécommande ne mérite pas qu'on se blesse pour elle.",
-    image: "/exercises/posture-deadlift.webp",
+    image: asset("exercises/posture-deadlift.webp"),
     duration: "2 minutes",
     difficulty: "moyen",
     bodyArea: "Bas du dos et Jambes",
@@ -89,7 +91,7 @@ export const exercises: Exercise[] = [
     title: "Le Salut du Viking Élastique",
     shortDescription: "Un étirement noble des bras et des épaules, digne d'un guerrier du quotidien.",
     goal: "Assouplir les triceps et l'épaule pour que les gestes du quotidien redeviennent fluides, souverains, et légèrement impressionnants.",
-    image: "/exercises/posture-epaule-bras.webp",
+    image: asset("exercises/posture-epaule-bras.webp"),
     duration: "2 minutes",
     difficulty: "doux",
     bodyArea: "Bras et Épaules",
@@ -104,7 +106,7 @@ export const exercises: Exercise[] = [
     title: "L'Aigle de Salon",
     shortDescription: "Élévations latérales des bras. Majestueux. Contrôlé. Légèrement ridicule. Très efficace.",
     goal: "Tonifier les épaules pour qu'elles portent fièrement les prochains sacs de courses, les bébés à câliner, et les espoirs familiaux.",
-    image: "/exercises/posture-epaules.webp",
+    image: asset("exercises/posture-epaules.webp"),
     duration: "1 minute 30",
     difficulty: "moyen",
     bodyArea: "Épaules",
@@ -119,7 +121,7 @@ export const exercises: Exercise[] = [
     title: "Superman en RTT",
     shortDescription: "Un super-héros discret, sans cape, sans slip rouge, mais avec des lombaires concernées.",
     goal: "Renforcer doucement le bas du dos et les fessiers, pour retrouver une posture de héros domestique — solide, digne, et capable de soulever un carton sans drame.",
-    image: "/exercises/superman.webp",
+    image: asset("exercises/superman.webp"),
     duration: "2 minutes",
     difficulty: "moyen",
     bodyArea: "Lombaires et Fessiers",
@@ -134,7 +136,7 @@ export const exercises: Exercise[] = [
     title: "Le Pectoral Philosophe",
     shortDescription: "Extension du dos sur dossier de chaise. Une pause digne d'un homme qui prend le temps de respirer et d'y réfléchir.",
     goal: "Ouvrir la colonne, libérer le souffle, et rappeler que s'étirer en pensant à rien de particulier est une forme de sagesse.",
-    image: "/exercises/torse.webp",
+    image: asset("exercises/torse.webp"),
     duration: "2 minutes",
     difficulty: "doux",
     bodyArea: "Torse et Colonne",
